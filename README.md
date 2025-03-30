@@ -52,7 +52,7 @@ Użycie:
 
 ----------------------------------------
 Gramatyka języka
-
+```
 program-all   -> procedures main
 
 procedures    -> procedures PROCEDURE proc_head IS declarations BEGIN commands END\
@@ -60,7 +60,7 @@ procedures    -> procedures PROCEDURE proc_head IS declarations BEGIN commands E
               |
 
 main          -> PROGRAM IS declarations BEGIN commands END\
-              |  PROGRAM IS BEGIN commands END\
+              |  PROGRAM IS BEGIN commands END
 
 commands      -> commands command\
               |  command
@@ -114,13 +114,14 @@ value         -> num\
 identifier    -> pidentifier\
               |  pidetnifier[pidentifier]\
               |  pidentifier[num]
-
+```
 ----------------------------------------
 Możliwości maszyny wirtualnej
 
 Maszyna składa się z licznika rozkazów $k$ oraz ciągu komórek pamięci $p_i$
 
-Dostępne rozkazy:\
+Dostępne rozkazy:
+```
 GET i     pobraną liczbę zapisuje w komórce pamięci $p_i$, $k$ <- $k+1$\
 PUT i     wyświetla zawartość komórki pamięci $p_i$, $k$ <- $k+1$\
 LOAD i    $p_0$ <- $p_i$, $k$ <- $k+1$\
@@ -139,3 +140,4 @@ JZERO j   if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$\
 JNEG j    if $p_0 < 0$ then $k$ <- $k+j$ else $k$ <- $k+1$\
 RTRN i    $k$ <- $p_i$\
 HALT      kończy działanie programu
+```
