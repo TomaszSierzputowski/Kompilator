@@ -55,64 +55,64 @@ Gramatyka języka
 ```
 program-all   -> procedures main
 
-procedures    -> procedures PROCEDURE proc_head IS declarations BEGIN commands END\
-              |  procedures PROCEDURE proc_head IS BEGIN commands END\
+procedures    -> procedures PROCEDURE proc_head IS declarations BEGIN commands END
+              |  procedures PROCEDURE proc_head IS BEGIN commands END
               |
 
-main          -> PROGRAM IS declarations BEGIN commands END\
+main          -> PROGRAM IS declarations BEGIN commands END
               |  PROGRAM IS BEGIN commands END
 
-commands      -> commands command\
+commands      -> commands command
               |  command
 
-command       -> identifier := expression;\
-              |  IF condition THEN commands ELSE commands ENDIF\
-              |  IF condition THEN commands ENDIF\
-              |  WHILE condition DO commands ENDWHILE\
-              |  REPEAT commands UNTIL condition;\
-              |  FOR pidentifier FROM value TO value DO commands ENDFOR\
-              |  FOR pidentifier FROM value DOWNTO value DO commands ENDFOR\
-              |  proc_call;\
-              |  READ identifier;\
+command       -> identifier := expression;
+              |  IF condition THEN commands ELSE commands ENDIF
+              |  IF condition THEN commands ENDIF
+              |  WHILE condition DO commands ENDWHILE
+              |  REPEAT commands UNTIL condition;
+              |  FOR pidentifier FROM value TO value DO commands ENDFOR
+              |  FOR pidentifier FROM value DOWNTO value DO commands ENDFOR
+              |  proc_call;
+              |  READ identifier;
               |  WRITE value;
 
 proc_head     -> pidentifier ( args_decl )
 
 proc_call     -> pidentifier ( args )
 
-declarations  -> declarations, pidentifier\
-              |  declarations, pidentifier[num:num]\
-              |  pidentifier\
+declarations  -> declarations, pidentifier
+              |  declarations, pidentifier[num:num]
+              |  pidentifier
               |  pidentifier[num:num]
 
-args_decl     -> args_decl, pidentifier\
-              |  args_decl, T pidentifier\
-              |  pidentifier\
+args_decl     -> args_decl, pidentifier
+              |  args_decl, T pidentifier
+              |  pidentifier
               |  T pidentifier
 
-args          -> args, pidentifier\
+args          -> args, pidentifier
               |  pidentifier
 
-expression    -> value\
-              |  value + value\
-              |  value - value\
-              |  value * value\
-              |  value * value\
-              |  value / value\
+expression    -> value
+              |  value + value
+              |  value - value
+              |  value * value
+              |  value * value
+              |  value / value
               |  value % value
 
-condition     -> value = value\
-              |  value != value\
-              |  value > value\
-              |  value < value\
-              |  value >= value\
+condition     -> value = value
+              |  value != value
+              |  value > value
+              |  value < value
+              |  value >= value
               |  value <= value
 
-value         -> num\
+value         -> num
               |  identifier
 
-identifier    -> pidentifier\
-              |  pidetnifier[pidentifier]\
+identifier    -> pidentifier
+              |  pidetnifier[pidentifier]
               |  pidentifier[num]
 ```
 ----------------------------------------
@@ -121,23 +121,21 @@ Możliwości maszyny wirtualnej
 Maszyna składa się z licznika rozkazów $k$ oraz ciągu komórek pamięci $p_i$
 
 Dostępne rozkazy:
-```
-GET i     pobraną liczbę zapisuje w komórce pamięci $p_i$, $k$ <- $k+1$\
-PUT i     wyświetla zawartość komórki pamięci $p_i$, $k$ <- $k+1$\
-LOAD i    $p_0$ <- $p_i$, $k$ <- $k+1$\
-STORE i   $p_i$ <- $p_0$, $k$ <- $k+1$\
-LOADI i   $p_0$ <- $p_{p_i}$, $k$ <- $k+1$\
-STOREI i  $p_{p_i}$ <- $p_0$, $k$ <- $k+1$\
-ADD i     $p_0$ <- $p_0 + p_i$, $k$ <- $k+1$\
-SUB i     $p_0$ <- $p_0 - p_i$, $k$ <- $k+1$\
-ADDI i    $p_0$ <- $p_0 + p_{p_i}$, $k$ <- $k+1$\
-SUBI i    $p_0$ <- $p_0 - p_{p_i}$, $k$ <- $k+1$\
-SET x     $p_0$ <- $x$, $k$ <- $k+1$\
-HALF      $p_0$ <- $floor(\frac{p_0}{2})$, $k$ <- $k+1$\
-JUMP j    $k$ <- $k+j$\
-JPOS j    if $p_0 > 0$ then $k$ <- $k+j$ else $k$ <- $k+1$\
-JZERO j   if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$\
-JNEG j    if $p_0 < 0$ then $k$ <- $k+j$ else $k$ <- $k+1$\
-RTRN i    $k$ <- $p_i$\
-HALT      kończy działanie programu
-```
+| GET i     | pobraną liczbę zapisuje w komórce pamięci $p_i$, $k$ <- $k+1$ |
+| PUT i     | wyświetla zawartość komórki pamięci $p_i$, $k$ <- $k+1$ |
+| LOAD i    | $p_0$ <- $p_i$, $k$ <- $k+1$ |
+| STORE i   | $p_i$ <- $p_0$, $k$ <- $k+1$ |
+| LOADI i   | $p_0$ <- $p_{p_i}$, $k$ <- $k+1$ |
+| STOREI i  | $p_{p_i}$ <- $p_0$, $k$ <- $k+1$ |
+| ADD i     | $p_0$ <- $p_0 + p_i$, $k$ <- $k+1$ |
+| SUB i     | $p_0$ <- $p_0 - p_i$, $k$ <- $k+1$ |
+| ADDI i    | $p_0$ <- $p_0 + p_{p_i}$, $k$ <- $k+1$ |
+| SUBI i    | $p_0$ <- $p_0 - p_{p_i}$, $k$ <- $k+1$ |
+| SET x     | $p_0$ <- $x$, $k$ <- $k+1$ |
+| HALF      | $p_0$ <- $floor(\frac{p_0}{2})$, $k$ <- $k+1$ |
+| JUMP j    | $k$ <- $k+j$ |
+| JPOS j    | if $p_0 > 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
+| JZERO j   | if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
+| JNEG j    | if $p_0 < 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
+| RTRN i    | $k$ <- $p_i$ |
+| HALT      | kończy działanie programu |
