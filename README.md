@@ -134,7 +134,7 @@ Dostępne rozkazy:
 | ADDI i    | $p_0$ <- $p_0 + p_{p_i}$, $k$ <- $k+1$                        |
 | SUBI i    | $p_0$ <- $p_0 - p_{p_i}$, $k$ <- $k+1$                        |
 | SET x     | $p_0$ <- $x$, $k$ <- $k+1$                                    |
-| HALF      | $p_0$ <- $floor(\frac{p_0}{2})$, $k$ <- $k+1$                 |
+| HALF      | $p_0$ <- $\lfloor \frac{p_0}{2} \rfloor$, $k$ <- $k+1$        |
 | JUMP j    | $k$ <- $k+j$                                                  |
 | JPOS j    | if $p_0 > 0$ then $k$ <- $k+j$ else $k$ <- $k+1$              |
 | JZERO j   | if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$              |
