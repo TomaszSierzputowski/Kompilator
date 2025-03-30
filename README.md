@@ -10,7 +10,7 @@
 # Kompilator
 
 ----------------------------------------
-Narzędzia:
+### Narzędzia:
 
 bison (GNU Bison) 3.5.1
 flex 2.6.4
@@ -18,7 +18,7 @@ GNU Make 4.2.1
 g++ 9.4.0
 
 ----------------------------------------
-Pliki:
+### Pliki:
 
 README.md
 Makefile
@@ -26,13 +26,13 @@ lexer.l
 parser.y
 
 ----------------------------------------
-Testowano pod:
+### Testowano pod:
 
 Ubuntu 20.04
 g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
 
 ----------------------------------------
-Kompilacja:
+### Kompilacja:
 
 Polecenie 'make' kompiluje program tworząc pliki:\
   'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
@@ -46,12 +46,12 @@ Polecenie 'make cleanall' usuwa wszyskie utworzone pliki:\
   'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
 
 ----------------------------------------
-Użycie:
+### Użycie:
 
 ./kompilator <plik_wejściowy> <plik_wyjściowy>
 
 ----------------------------------------
-Gramatyka języka
+### Gramatyka języka
 ```
 program-all   -> procedures main
 
@@ -116,11 +116,11 @@ identifier    -> pidentifier
               |  pidentifier[num]
 ```
 ----------------------------------------
-Możliwości maszyny wirtualnej
+### Możliwości maszyny wirtualnej
 
 Maszyna składa się z licznika rozkazów $k$ oraz ciągu komórek pamięci $p_i$
 
-Dostępne rozkazy:
+#### Dostępne rozkazy:
 | Rozkaz    | Interpretacja                                                 |
 |-----------|---------------------------------------------------------------|
 | GET i     | pobraną liczbę zapisuje w komórce pamięci $p_i$, $k$ <- $k+1$ |
