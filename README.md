@@ -121,21 +121,23 @@ Możliwości maszyny wirtualnej
 Maszyna składa się z licznika rozkazów $k$ oraz ciągu komórek pamięci $p_i$
 
 Dostępne rozkazy:
+| Rozkaz    | Interpretacja                                                 |
+|-----------|---------------------------------------------------------------|
 | GET i     | pobraną liczbę zapisuje w komórce pamięci $p_i$, $k$ <- $k+1$ |
-| PUT i     | wyświetla zawartość komórki pamięci $p_i$, $k$ <- $k+1$ |
-| LOAD i    | $p_0$ <- $p_i$, $k$ <- $k+1$ |
-| STORE i   | $p_i$ <- $p_0$, $k$ <- $k+1$ |
-| LOADI i   | $p_0$ <- $p_{p_i}$, $k$ <- $k+1$ |
-| STOREI i  | $p_{p_i}$ <- $p_0$, $k$ <- $k+1$ |
-| ADD i     | $p_0$ <- $p_0 + p_i$, $k$ <- $k+1$ |
-| SUB i     | $p_0$ <- $p_0 - p_i$, $k$ <- $k+1$ |
-| ADDI i    | $p_0$ <- $p_0 + p_{p_i}$, $k$ <- $k+1$ |
-| SUBI i    | $p_0$ <- $p_0 - p_{p_i}$, $k$ <- $k+1$ |
-| SET x     | $p_0$ <- $x$, $k$ <- $k+1$ |
-| HALF      | $p_0$ <- $floor(\frac{p_0}{2})$, $k$ <- $k+1$ |
-| JUMP j    | $k$ <- $k+j$ |
-| JPOS j    | if $p_0 > 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
-| JZERO j   | if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
-| JNEG j    | if $p_0 < 0$ then $k$ <- $k+j$ else $k$ <- $k+1$ |
-| RTRN i    | $k$ <- $p_i$ |
-| HALT      | kończy działanie programu |
+| PUT i     | wyświetla zawartość komórki pamięci $p_i$, $k$ <- $k+1$       |
+| LOAD i    | $p_0$ <- $p_i$, $k$ <- $k+1$                                  |
+| STORE i   | $p_i$ <- $p_0$, $k$ <- $k+1$                                  |
+| LOADI i   | $p_0$ <- $p_{p_i}$, $k$ <- $k+1$                              |
+| STOREI i  | $p_{p_i}$ <- $p_0$, $k$ <- $k+1$                              |
+| ADD i     | $p_0$ <- $p_0 + p_i$, $k$ <- $k+1$                            |
+| SUB i     | $p_0$ <- $p_0 - p_i$, $k$ <- $k+1$                            |
+| ADDI i    | $p_0$ <- $p_0 + p_{p_i}$, $k$ <- $k+1$                        |
+| SUBI i    | $p_0$ <- $p_0 - p_{p_i}$, $k$ <- $k+1$                        |
+| SET x     | $p_0$ <- $x$, $k$ <- $k+1$                                    |
+| HALF      | $p_0$ <- $floor(\frac{p_0}{2})$, $k$ <- $k+1$                 |
+| JUMP j    | $k$ <- $k+j$                                                  |
+| JPOS j    | if $p_0 > 0$ then $k$ <- $k+j$ else $k$ <- $k+1$              |
+| JZERO j   | if $p_0 = 0$ then $k$ <- $k+j$ else $k$ <- $k+1$              |
+| JNEG j    | if $p_0 < 0$ then $k$ <- $k+j$ else $k$ <- $k+1$              |
+| RTRN i    | $k$ <- $p_i$                                                  |
+| HALT      | kończy działanie programu                                     |
