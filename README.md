@@ -12,38 +12,38 @@
 ----------------------------------------
 ### Narzędzia:
 
-bison (GNU Bison) 3.5.1
-flex 2.6.4
-GNU Make 4.2.1
+bison (GNU Bison) 3.5.1\
+flex 2.6.4\
+GNU Make 4.2.1\
 g++ 9.4.0
 
 ----------------------------------------
 ### Pliki:
 
-README.md
-Makefile
-lexer.l
+README.md\
+Makefile\
+lexer.l\
 parser.y
 
 ----------------------------------------
 ### Testowano pod:
 
-Ubuntu 20.04
+Ubuntu 20.04\
 g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
 
 ----------------------------------------
 ### Kompilacja:
 
 Polecenie 'make' kompiluje program tworząc pliki:\
-  'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
+&emsp;'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
 
 Polecenie 'make clean' usuwa pliki:\
-  'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
+&emsp;'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'\
 zostawiając jedynie:\
-  'kompilator'
+&emsp;'kompilator'
 
 Polecenie 'make cleanall' usuwa wszyskie utworzone pliki:\
-  'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
+&emsp;'kompilator' 'parser.o' 'lexer.o' 'parser.cpp' 'parser.hpp' 'lexer.cpp'
 
 ----------------------------------------
 ### Użycie:
